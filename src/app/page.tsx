@@ -21,9 +21,11 @@ import { Suspense } from 'react';
 async function fetchTodayCropData() {
   try {
     const response = await fetch(`${process.env.BASE_URL}/api/todayCrop`);
-    // if (!response.ok) {
-    //   throw new Error('Failed to fetch');
-    // }
+
+    console.log('🚀  process.env.BASE_URL:', process.env.BASE_URL);
+    if (!response.ok) {
+      throw new Error('Failed to fetch');
+    }
     return response.json();
   } catch (error) {
     console.error('Failed to fetch todayCropData:', error);
