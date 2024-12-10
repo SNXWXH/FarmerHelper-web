@@ -21,14 +21,7 @@ import { Suspense } from 'react';
 export const dynamic = 'force-dynamic';
 async function fetchTodayCropData() {
   try {
-    // const response = await fetch(`${process.env.BASE_URL}/api/todayCrop`);
-    const response = await fetch(
-      `${process.env.SERVER_BASE_URL}/api/main/todaycrop`,
-      {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      }
-    );
+    const response = await fetch(`${process.env.BASE_URL}/api/todayCrop`);
 
     console.log('🚀  process.env.BASE_URL:', process.env.BASE_URL);
     console.log('Response', response);
