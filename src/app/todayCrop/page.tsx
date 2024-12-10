@@ -4,7 +4,7 @@ import Modal from '@/components/Modal';
 import TodayCropModal from '@/components/TodayCropModal';
 import { useCropContext } from '../context/modalContext';
 // import { useCropContext } from '../\bcontext/modalContext';
-
+export const dynamic = 'force-dynamic';
 export default function TodayCrop() {
   const { cropName } = useCropContext();
 

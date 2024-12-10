@@ -18,6 +18,7 @@ import { Suspense } from 'react';
 //   return response.json();
 // }
 
+export const dynamic = 'force-dynamic';
 async function fetchTodayCropData() {
   try {
     // const response = await fetch(`${process.env.BASE_URL}/api/todayCrop`);
