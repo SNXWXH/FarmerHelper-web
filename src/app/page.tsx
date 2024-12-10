@@ -45,77 +45,73 @@ async function TodayCropSection() {
 
 export default function Home() {
   return (
-    <>
-      <div className='flex flex-col items-center h-screen pt-14'>
-        <div className='w-3/5'>
-          <div className='mt-14'>
-            <p className='font-nanumHeavy font-heavy text-2xl'>오늘의 날씨</p>
-            <Suspense
-              fallback={
-                <Skeleton className='mt-8 h-40 w-full bg-[#F2FFE0] rounded-2xl flex justify-center items-center' />
-              }
-            >
-              <MainWeather />
-            </Suspense>
-          </div>
-          <div className='mt-14'>
-            <p className='font-nanumHeavy font-heavy text-2xl'>
-              오늘의 추천 작물
-            </p>
-            <Suspense
-              fallback={
-                <div className='mt-8 flex gap-4 overflow-x-auto '>
-                  {[...Array(5)].map((_, idx) => (
-                    <Skeleton
-                      key={idx}
-                      className='h-44 w-44 rounded-lg flex-shrink-0 '
-                    />
-                  ))}
-                </div>
-              }
-            >
-              <TodayCropSection />
-            </Suspense>
-          </div>
+    <div className='flex flex-col items-center h-screen pt-14'>
+      <div className='w-3/5'>
+        <div className='mt-14'>
+          <p className='font-nanumHeavy font-heavy text-2xl'>오늘의 날씨</p>
+          <Suspense
+            fallback={
+              <Skeleton className='mt-8 h-40 w-full bg-[#F2FFE0] rounded-2xl flex justify-center items-center' />
+            }
+          >
+            <MainWeather />
+          </Suspense>
+        </div>
+        <div className='mt-14'>
+          <p className='font-nanumHeavy font-heavy text-2xl'>
+            오늘의 추천 작물
+          </p>
+          <Suspense
+            fallback={
+              <div className='mt-8 flex gap-4 overflow-x-auto '>
+                {[...Array(5)].map((_, idx) => (
+                  <Skeleton
+                    key={idx}
+                    className='h-44 w-44 rounded-lg flex-shrink-0 '
+                  />
+                ))}
+              </div>
+            }
+          >
+            <TodayCropSection />
+          </Suspense>
+        </div>
 
-          <div className='mt-14'>
-            <p className='font-nanumHeavy font-heavy text-2xl'>
-              이번 달 인기 작물
-            </p>
-            <Suspense
-              fallback={
-                <div className='mt-8'>
-                  {[...Array(5)].map((_, idx) => (
-                    <Skeleton
-                      key={idx}
-                      className='h-8 w-full mb-4 animate-skeleton'
-                    />
-                  ))}
-                </div>
-              }
-            >
-              <MonthRank />
-            </Suspense>
-          </div>
+        <div className='mt-14'>
+          <p className='font-nanumHeavy font-heavy text-2xl'>
+            이번 달 인기 작물
+          </p>
+          <Suspense
+            fallback={
+              <div className='mt-8'>
+                {[...Array(5)].map((_, idx) => (
+                  <Skeleton
+                    key={idx}
+                    className='h-8 w-full mb-4 animate-skeleton'
+                  />
+                ))}
+              </div>
+            }
+          >
+            <MonthRank />
+          </Suspense>
+        </div>
 
-          <div className='my-14'>
-            <p className='font-nanumHeavy font-heavy text-2xl'>
-              오늘의 작업일지
-            </p>
-            <Suspense
-              fallback={
-                <div className='mt-8'>
-                  {[...Array(3)].map((_, idx) => (
-                    <Skeleton key={idx} className='h-12 w-full mb-4' />
-                  ))}
-                </div>
-              }
-            >
-              <MainWorkLog />
-            </Suspense>
-          </div>
+        <div className='my-14'>
+          <p className='font-nanumHeavy font-heavy text-2xl'>오늘의 작업일지</p>
+          <Suspense
+            fallback={
+              <div className='mt-8'>
+                {[...Array(3)].map((_, idx) => (
+                  <Skeleton key={idx} className='h-12 w-full mb-4' />
+                ))}
+              </div>
+            }
+          >
+            <MainWorkLog />
+          </Suspense>
         </div>
       </div>
-    </>
+    </div>
   );
 }
