@@ -59,7 +59,7 @@ const AllDetail = ({
     setIsReversed(!isReversed);
   };
 
-  const displayedData = isReversed ? data.reverse() : data;
+  const displayedData = isReversed ? [...data].reverse() : data;
 
   return (
     <>
